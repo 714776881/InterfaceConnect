@@ -1,0 +1,214 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6CB306B9-AF6E-4318-8A56-644D6D00C1BE}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>APIConfigService</RootNamespace>
+    <AssemblyName>APIConfigService</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Data3, Version=3.2.1.0, Culture=neutral, PublicKeyToken=79868b8147b5eae4">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Users\Administrator\source\repos\WindowsFormsApp6\WindowsFormsApp6\dll\DevExpress.Data3.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="RestSharp">
+      <HintPath>dll\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TreeListView">
+      <HintPath>dll\TreeListView.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApiCommandFactory.cs" />
+    <Compile Include="ApiControlManager.cs" />
+    <Compile Include="ApiFactory.cs" />
+    <Compile Include="ApiManager.cs" />
+    <Compile Include="ApiCommandManager.cs" />
+    <Compile Include="ApiInvoker.cs" />
+    <Compile Include="Controls\RuleControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\RuleControl.Designer.cs">
+      <DependentUpon>RuleControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Base\ApiBase.cs" />
+    <Compile Include="Model\Base\ApiCommandBase.cs" />
+    <Compile Include="Model\Base\InfoType.cs" />
+    <Compile Include="Model\Base\MessageBase.cs" />
+    <Compile Include="Model\DB\DBNoQueryApiCommand.cs" />
+    <Compile Include="Model\DB\DBQueryApiCommand.cs" />
+    <Compile Include="Model\Extra\ExtraApi.cs" />
+    <Compile Include="Model\Extra\ExtraApiCommand.cs" />
+    <Compile Include="Utils\DBHelper.cs" />
+    <Compile Include="Utils\ReflectionHelper.cs" />
+    <Compile Include="Controls\DBControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\DBControl.Designer.cs">
+      <DependentUpon>DBControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ExtraControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ExtraControl.Designer.cs">
+      <DependentUpon>ExtraControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\WebServiceControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\WebServiceControl.Designer.cs">
+      <DependentUpon>WebServiceControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Base\Api.cs" />
+    <Compile Include="Model\Base\IApiCommand.cs" />
+    <Compile Include="Model\DB\DBApi.cs" />
+    <Compile Include="Model\DB\DBStoredProcedureCommand.cs" />
+    <Compile Include="Model\Base\Expression.cs" />
+    <Compile Include="Model\ConfigEvaluator.cs" />
+    <Compile Include="Model\Base\KeyObject.cs" />
+    <Compile Include="Model\Http\HttpReceiveCommand.cs" />
+    <Compile Include="Model\Http\HttpSendCommand.cs" />
+    <Compile Include="Model\Http\DesDicParser.cs" />
+    <Compile Include="Model\WebService\WebServieApi.cs" />
+    <Compile Include="Controls\ApiConfigForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\ApiConfigForm.Designer.cs">
+      <DependentUpon>ApiConfigForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UserControl.Designer.cs">
+      <DependentUpon>UserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\HttpControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\HttpControl.Designer.cs">
+      <DependentUpon>HttpControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utils\DictionaryHelper.cs" />
+    <Compile Include="Utils\FileHelper.cs" />
+    <Compile Include="Utils\HttpHelper.cs" />
+    <Compile Include="Model\Http\DicParser.cs" />
+    <Compile Include="Utils\JsonHelper.cs" />
+    <Compile Include="Model\Base\KeyValue.cs" />
+    <Compile Include="Utils\OracleHelper.cs" />
+    <Compile Include="Model\Base\KeywordRule.cs" />
+    <Compile Include="Model\Http\HttpApi.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utils\RegexHelper.cs" />
+    <Compile Include="Utils\XmlHelper.cs" />
+    <EmbeddedResource Include="Controls\DBControl.resx">
+      <DependentUpon>DBControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ExtraControl.resx">
+      <DependentUpon>ExtraControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\RuleControl.resx">
+      <DependentUpon>RuleControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\WebServiceControl.resx">
+      <DependentUpon>WebServiceControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\HttpControl.resx">
+      <DependentUpon>HttpControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Controls\ApiConfigForm.resx">
+      <DependentUpon>ApiConfigForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UserControl.resx">
+      <DependentUpon>UserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="readme.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
